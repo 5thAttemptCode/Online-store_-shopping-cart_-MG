@@ -1,0 +1,775 @@
+/*____________Imports_________________*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+/*_____COLORS_____*/
+/*_______FONT SIZE________*/
+/*______MIXINS________*/
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  height: 3rem;
+  width: 3rem;
+  font-size: 25px;
+  font-weight: 500;
+  background: #FCFEFF;
+  padding: 1% 1%;
+  border-radius: 50%;
+  z-index: 10;
+  color: #cccccc;
+  border: 1px solid #FCFEFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.logo:hover {
+  color: #000;
+  border: 1px solid #000;
+}
+
+.logo a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 4%;
+  right: 12rem;
+  width: 8rem;
+  padding: 1% 0;
+  font-size: 20px;
+  background: #FCFEFF;
+  border-radius: 10px;
+  z-index: 10;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #FCFEFF;
+}
+
+.user:hover {
+  border: 1px solid #000;
+}
+
+.user:hover i {
+  color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.user i {
+  margin: 0 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #cccccc;
+}
+
+#toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20%;
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  top: 5%;
+  right: 5%;
+  border-radius: 50%;
+  z-index: 1000;
+  background: #FCFEFF;
+  cursor: pointer;
+  border: 1px solid #000;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#toggle.active {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+#toggle::after {
+  content: '';
+  width: 70%;
+  height: 2px;
+  background: #000;
+}
+
+#toggle::before {
+  content: '';
+  width: 70%;
+  height: 2px;
+  background: #000;
+}
+
+#menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 100;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  gap: 5%;
+  height: 100%;
+  width: 100%;
+  margin-left: 7%;
+}
+
+#menu ul a {
+  color: #FCFEFF;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+#menu.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.container.content-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: top;
+      -ms-flex-pack: top;
+          justify-content: top;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 5%;
+  background: #FCFEFF;
+  z-index: 10000;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  border-right: 3px solid #000;
+}
+
+.container.content-section.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.container.content-section .close {
+  cursor: pointer;
+  position: absolute;
+  top: 6%;
+  right: 10%;
+}
+
+.container.content-section .cart-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 70%;
+}
+
+.container.content-section .cart-row .cart-header {
+  border-bottom: 3px solid #000;
+}
+
+.container.content-section .cart-row .cart-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+}
+
+.container.content-section .cart-row .cart-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+}
+
+.container.content-section .cart-row .cart-quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+}
+
+.container.content-section .cart-row .cart-quantity input {
+  width: 50px;
+}
+
+.container.content-section .cart-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  width: 57%;
+  border-bottom: 1px solid #000;
+}
+
+.container.content-section .cart-items .cart-price {
+  width: 30%;
+  margin-left: 30%;
+}
+
+.container.content-section .cart-items .cart-quantity {
+  margin-right: -10%;
+  margin-left: 15%;
+}
+
+.container.content-section .cart-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10%;
+}
+
+.container.content-section .cart-total .cart-total-title,
+.container.content-section .cart-total .cart-total-price {
+  font-size: 25px;
+}
+
+.container.content-section .cart-total .cart-total-title {
+  margin-right: 30px;
+}
+
+.container.content-section .buy {
+  width: 150px;
+  height: 50px;
+  outline: none;
+  border: 1px solid #FCFEFF;
+  background: #000;
+  color: #FCFEFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.container.content-section .buy:hover {
+  background: #FCFEFF;
+  border: 1px solid #000;
+  color: #000;
+}
+
+/*____________Basics_________________*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  background: #FCFEFF;
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+::-moz-selection {
+  background: #000;
+  color: #FCFEFF;
+}
+
+::selection {
+  background: #000;
+  color: #FCFEFF;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: clamp(1rem, 1.5vw, 35px);
+}
+
+/*____________Home_________________*/
+#home .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  gap: 5%;
+  position: absolute;
+  left: 6%;
+  top: 40%;
+}
+
+#home .heading h1 {
+  font-size: clamp(2rem, 4vw, 50px);
+}
+
+#home .heading a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 22%;
+  margin-top: 15px;
+  text-decoration: none;
+  background: #000;
+  color: #FCFEFF;
+  outline: 2px solid #FCFEFF;
+  padding: 2%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+#home .heading a:hover {
+  background: #FCFEFF;
+  color: #000;
+  outline: 2px solid #000;
+}
+
+/*____________Shop_________________*/
+#shop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5%;
+}
+
+#shop .shop-items {
+  position: relative;
+  bottom: 0;
+  width: 88%;
+  height: 80%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30%, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  grid-gap: 2% 1%;
+}
+
+#shop .shop-items .shop-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #000;
+  overflow: hidden;
+}
+
+#shop .shop-items .shop-item .shop-item-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+}
+
+#shop .shop-items .shop-item .shop-item-details .shop-item-title {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 5px;
+}
+
+#shop .shop-items .shop-item .shop-item-details .shop-item-price {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#shop .shop-items .shop-item img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#shop .shop-items .shop-item img:hover {
+  -webkit-transform: scale(1.5) translate(-35px, 35px);
+          transform: scale(1.5) translate(-35px, 35px);
+}
+
+#shop .shop-items .shop-item .btn {
+  width: 45%;
+  height: 2.5rem;
+  background: #000;
+  border: 1px solid #FCFEFF;
+  letter-spacing: 1px;
+  font-weight: 500;
+  outline: none;
+  color: #FCFEFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+#shop .shop-items .shop-item .btn:hover {
+  background: #FCFEFF;
+  color: #000;
+  border: 1px solid #000;
+}
+
+#shop .shop-items .shop-item .btn:active {
+  background: #285328;
+  color: #FCFEFF;
+}
+
+/*____________About_________________*/
+#about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#about .about-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  width: 50%;
+  height: 70%;
+}
+
+#about .about-container p {
+  margin: 0 5%;
+  text-align: justify;
+  line-height: 1.5;
+  font-size: clamp(12px, 2vw, 22px);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/*____________Contact_________________*/
+#contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contact .contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5%;
+  position: relative;
+  height: 70%;
+  width: 30%;
+}
+
+#contact .contact-form input {
+  width: 100%;
+  padding: 5px;
+  outline: none;
+  border: 1px solid #000;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#contact .contact-form textarea {
+  width: 100%;
+  height: 50%;
+  resize: none;
+  padding: 5px;
+  border: 1px solid #000;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#contact .contact-form .submit {
+  width: 33%;
+  height: 4rem;
+  cursor: pointer;
+  background: #000;
+  border: 2px solid #FCFEFF;
+  color: #FCFEFF;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 17px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#contact .contact-form .submit:hover {
+  background: #FCFEFF;
+  color: #000;
+  border: 2px solid #000;
+}
+
+/*____________Footer/Service_________________*/
+#service {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  background: #000;
+}
+
+#service .service-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  width: 20%;
+  height: 100%;
+}
+
+#service .service-content span {
+  color: #FCFEFF;
+  cursor: pointer;
+}
+
+/*____________Responsive_________________*/
+@media (max-width: 1200px) {
+  #about .about-container {
+    width: 70%;
+  }
+  #contact .contact-form {
+    width: 50%;
+  }
+}
+
+/*_____________________________*/
+@media (max-width: 1024px) {
+  #shop .shop-items {
+    height: 90%;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*_____________________________*/
+@media (max-width: 990px) {
+  #home .heading a {
+    width: 30%;
+  }
+}
+
+/*_____________________________*/
+@media (max-width: 768px) {
+  #contact .contact-form {
+    width: 70%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

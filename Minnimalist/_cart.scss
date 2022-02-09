@@ -1,0 +1,107 @@
+
+
+.container.content-section{
+    @include flex-col-top;
+    gap: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 5%;
+    background: $bg-col;
+    z-index: 10000;
+    transform: translateX(-100%);
+    transition: all 1s;
+    border-right: 3px solid $fo-col;
+
+    &.active{
+        transform: translateX(0);
+    }
+
+    .close{
+        cursor: pointer;
+        position: absolute;
+        top: 6%;
+        right: 10%;
+    }
+
+    .cart-row{
+        @include flex;
+        position: relative;
+        width: 70%;
+
+        .cart-header{
+            border-bottom: 3px solid $fo-col;
+        }
+
+        .cart-item {
+            @include flex;
+            width: 40%;
+        }
+        
+        .cart-price {
+            @include flex;
+            width: 20%;
+        }
+        
+        .cart-quantity {
+            @include flex;
+            width: 20%;
+            
+            input{
+                width: 50px;
+            }
+        }
+    }
+
+    .cart-items{
+        @include flex-col;
+        gap: 20px;
+        width: 57%;
+        border-bottom: 1px solid $fo-col;
+
+        .cart-price{
+            width: 30%;
+            margin-left: 30%;
+        }
+
+        .cart-quantity{
+            margin-right: -10%;
+            margin-left: 15%;
+        }
+    }
+
+    .cart-total{
+        @include flex-ev;
+        width: 10%;
+
+        .cart-total-title,
+        .cart-total-price{
+            font-size: 25px;
+        }
+
+        .cart-total-title{
+            margin-right: 30px;
+        }
+    }
+
+    .buy{
+        width: 150px;
+        height: 50px;
+        outline: none;
+        border: 1px solid $bg-col;
+        background: $fo-col;
+        color: $bg-col;
+        transition: all 0.3s;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        font-size: 1rem;
+
+        &:hover{
+            background: $bg-col;
+            border: 1px solid $fo-col;
+            color: $fo-col;
+        }
+    }
+}

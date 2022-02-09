@@ -1,0 +1,315 @@
+/*____________Imports_________________*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import 'plugins';
+@import 'top';
+@import 'cart';
+
+
+/*____________Basics_________________*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $fo-col;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    background: $bg-col;
+}
+
+section{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+::selection{
+    background: $fo-col;
+    color: $bg-col;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: transparent;
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background: $fo-col;
+    border-radius: 10px;
+}
+
+h2{
+    font-size: $fo-sz-l;
+}
+
+
+/*____________Home_________________*/
+#home{
+
+    .heading{
+        @include flex-col-le;
+        gap: 5%;
+        position: absolute;
+        left: 6%;
+        top: 40%;
+
+        h1{
+            font-size: $fo-sz-xl;
+        }
+
+        a{
+            @include flex;
+            width: 22%;
+            margin-top: 15px;
+            text-decoration: none;
+            background: $fo-col;
+            color: $bg-col;
+            outline: 2px solid $bg-col;
+            padding: 2%;
+            transition: all 0.3s;
+            font-weight: 500;
+
+            &:hover{
+                background: $bg-col;
+                color: $fo-col;
+                outline: 2px solid $fo-col;
+            }
+        }
+    }
+}
+
+
+/*____________Shop_________________*/
+#shop{
+    @include flex-col;
+    gap: 5%;
+
+    .shop-items{
+        position: relative;
+        bottom: 0;
+        width: 88%;
+        height: 80%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+        grid-gap: 2% 1%;
+
+        .shop-item{
+            position: relative;
+            @include flex;
+            border: 1px solid #000;
+            overflow: hidden;
+
+            .shop-item-details{
+                @include flex-col-ev;
+                gap: 20px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 50%;
+                height: 100%;
+
+                .shop-item-title{
+                    font-size: 20px;
+                    font-weight: 500;
+                    text-align: center;
+                    padding: 0 5px;
+                }
+
+                .shop-item-price{
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+            }
+
+            img{
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 50%;
+                object-fit: cover;
+                transform: scale(0.9);
+                transition: all 0.5s;
+
+                &:hover{
+                    transform: scale(1.5) translate(-35px, 35px);
+                }
+            }
+
+            .btn{
+                width: 45%;
+                height: 2.5rem;
+                background: $fo-col;
+                border: 1px solid $bg-col;
+                letter-spacing: 1px;
+                font-weight: 500;
+                outline: none;
+                color: $bg-col;
+                transition: all 0.3s;
+                cursor: pointer;
+
+                &:hover{
+                    background: $bg-col;
+                    color: $fo-col;
+                    border: 1px solid $fo-col;
+                }
+
+                &:active{
+                    background: rgb(40, 83, 40);
+                    color: $bg-col;
+                }
+
+            }
+        }
+    }
+}
+
+
+/*____________About_________________*/
+#about{
+    @include flex;
+
+    .about-container{
+        @include flex-col;
+        gap: 20px;
+        width: 50%;
+        height: 70%;
+
+        p{
+            margin: 0 5%;
+            text-align: justify;
+            line-height: 1.5;
+            font-size: $fo-sz-m;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+
+/*____________Contact_________________*/
+#contact{
+    @include flex;
+
+    .contact-form{
+        @include flex-col;
+        gap: 5%;
+        position: relative;
+        height: 70%;
+        width: 30%;
+
+        input{
+            width: 100%;
+            padding: 5px;
+            outline: none;
+            border: 1px solid $fo-col;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        textarea{
+            width: 100%;
+            height: 50%;
+            resize: none;
+            padding: 5px;
+            border: 1px solid $fo-col;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .submit{
+            width: 33%;
+            height: 4rem;
+            cursor: pointer;
+            background: $fo-col;
+            border: 2px solid $bg-col;
+            color: $bg-col;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 17px;
+            transition: all 0.3s;
+
+            &:hover{
+                background: $bg-col;
+                color: $fo-col;
+                border: 2px solid $fo-col;
+            }
+        }
+    }
+}
+
+
+/*____________Footer/Service_________________*/
+#service{
+    @include flex;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background: $fo-col;
+
+    .service-content{
+        @include flex-col-le;
+        width: 20%;
+        height: 100%;
+
+        span{
+            color: $bg-col;
+            cursor: pointer;
+        }
+    }
+}
+
+
+/*____________Responsive_________________*/
+@media (max-width: 1200px){
+    #about{
+        .about-container{
+            width: 70%;
+        }
+    }
+
+    #contact{
+        .contact-form{
+            width: 50%;
+        }
+    }
+}
+
+/*_____________________________*/
+@media (max-width: 1024px){
+    #shop{
+        .shop-items{
+            height: 90%;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+/*_____________________________*/
+@media (max-width: 990px){
+    #home{
+        .heading{
+            a{
+                width: 30%;
+            }
+        }
+    }
+}
+
+/*_____________________________*/
+@media (max-width: 768px){
+
+    #contact{
+        .contact-form{
+            width: 70%;
+        }
+    }
+}

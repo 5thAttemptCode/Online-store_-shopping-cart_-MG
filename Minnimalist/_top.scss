@@ -1,0 +1,127 @@
+
+.logo{
+    @include flex;
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    height: 3rem;
+    width: 3rem;
+    font-size: 25px;
+    font-weight: 500;
+    background: $bg-col;
+    padding: 1% 1%;
+    border-radius: 50%;
+    z-index: 10;
+    color: lighten($fo-col, 80%);
+    border: 1px solid $bg-col;
+    transition: all 0.3s;
+
+    &:hover{
+        color: $fo-col;
+        border: 1px solid $fo-col;
+    }
+
+    a{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.user{
+    @include flex;
+    position: fixed;
+    top: 4%;
+    right: 12rem;
+    width: 8rem;
+    padding: 1% 0;
+    font-size: 20px;
+    background: $bg-col;
+    border-radius: 10px;
+    z-index: 10;
+    transition: all 0.3s;
+    border: 1px solid $bg-col;
+
+    &:hover{
+        border: 1px solid $fo-col;
+
+        i{
+            color: $fo-col;
+            transition: 0.5s;
+        }
+    }
+
+    i{
+        margin: 0 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: lighten($fo-col, 80%);
+    }
+
+}
+
+
+#toggle{
+    @include flex-col;
+    gap: 20%;
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    top: 5%;
+    right: 5%;
+    border-radius: 50%;
+    z-index: 1000;
+    background: $bg-col;
+    cursor: pointer;
+    border: 1px solid $fo-col;
+    transition: all 0.5s;
+
+    &.active{
+        transform: rotate(90deg);
+    }
+    
+
+    &::after{
+        content: '';
+        width: 70%;
+        height: 2px;
+        background: $fo-col;
+    }
+
+    &::before{
+        content: '';
+        width: 70%;
+        height: 2px;
+        background: $fo-col;
+    }
+}
+
+#menu{
+    @include flex-col-le;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $fo-col;
+    z-index: 100;
+    transform: translateY(-100%);
+    transition: all 0.5s;
+
+    ul{
+        @include flex-col-le;
+        gap: 5%;
+        height: 100%;
+        width: 100%;
+        margin-left: 7%;
+
+        a{
+            color: $bg-col;
+            text-decoration: none;
+            font-size: 30px;
+        }
+    }
+
+    &.active{
+        transform: translateY(0);
+    }
+}
