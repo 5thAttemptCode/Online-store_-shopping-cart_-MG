@@ -58,6 +58,27 @@
         color: lighten($fo-col, 80%);
     }
 
+    .fa-shopping-cart::after{
+        @include flex;
+        font-size: 10px;
+        color: $bg-col;
+        content: attr(data-count);
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: $green;
+        top: 15%;
+        right: 12%;
+        border-radius: 50%;
+        opacity: 0;
+    }
+
+    .fa-shopping-cart.zero::after{
+        opacity: 1;
+    }
+
+    
+
 }
 
 

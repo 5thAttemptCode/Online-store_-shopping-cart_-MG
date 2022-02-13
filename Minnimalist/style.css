@@ -83,6 +83,33 @@
   color: #cccccc;
 }
 
+.user .fa-shopping-cart::after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 10px;
+  color: #FCFEFF;
+  content: attr(data-count);
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #285328;
+  top: 15%;
+  right: 12%;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.user .fa-shopping-cart.zero::after {
+  opacity: 1;
+}
+
 #toggle {
   display: -webkit-box;
   display: -ms-flexbox;

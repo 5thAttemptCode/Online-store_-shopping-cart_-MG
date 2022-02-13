@@ -32,6 +32,17 @@ cart.onclick = function(){
     cartFull.classList.toggle('active')
 }
 
+/*__________Cart counter__________*/ 
+var noti = document.querySelector('.fa-shopping-cart');
+var button = document.getElementsByTagName('button')
+for(var but of button){
+    but.addEventListener('click', (e)=>{
+        var add = Number(noti.getAttribute('data-count') || 0);
+        noti.setAttribute('data-count', add +1);
+        noti.classList.add('zero')
+    })
+}
+
 
 /*__________SHOPPING CART FUNCTIONALITY__________*/ 
 /*__________Make sure content is loaded__________*/ 
