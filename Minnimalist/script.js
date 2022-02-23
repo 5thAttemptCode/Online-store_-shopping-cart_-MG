@@ -19,6 +19,25 @@ toggle.onclick = function(){
 }
 
 
+/*__________Nav hover Toggle__________*/ 
+const nav = document.querySelector("nav")
+toggle.addEventListener('mouseover', func)
+toggle.addEventListener('mouseout', func1)
+
+function func(){
+    nav.setAttribute("style", "background:#000;")
+}
+
+function func1(){
+    nav.setAttribute("style", "bakground:#FCFEFF")
+}
+
+
+/*__________Open/Close Cart__________*/ 
+tl = new TimelineMax({});
+tl.staggerTo('.tl-head', 1.5, {opacity: 1, ease:Power4.easeOut}, 0.2)
+
+
 /*__________Open/Close Cart__________*/ 
 const cart = document.getElementById('cart');
 const cartFull = document.getElementById('cart-full');

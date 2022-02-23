@@ -8,15 +8,8 @@ $green: rgb(40, 83, 40);
 $fo-sz-xl: clamp(2rem, 4vw, 50px);
 $fo-sz-l: clamp(1rem, 1.5vw, 35px);
 $fo-sz-m: clamp(12px, 2vw, 22px);
-
-
-
-
-
-
-
-
-
+$fo-sz-s: clamp(12px, 2vw, 20px);
+$fo-sz-xs: clamp(12px, 1vw, 16px);
 
 /*______MIXINS________*/
 @mixin flex{
