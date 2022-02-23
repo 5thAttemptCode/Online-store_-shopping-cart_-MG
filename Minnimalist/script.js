@@ -33,7 +33,7 @@ function func1(){
 }
 
 
-/*__________Open/Close Cart__________*/ 
+/*__________GSAP Intro__________*/ 
 tl = new TimelineMax({});
 tl.staggerTo('.tl-head', 1.5, {opacity: 1, ease:Power4.easeOut}, 0.2)
 
